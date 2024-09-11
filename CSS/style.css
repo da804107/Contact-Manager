@@ -6,9 +6,16 @@ body
     min-height: 100vh;
 }
 
-h1 {
-    color: rgb(0, 0, 0);
-    font-weight: bold;
+h1
+{
+
+    font-size: 40px;
+    width: 100%;
+    /*margin: 2% 5%;*/
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #FFFFFF;
+
 }
 
 #title 
@@ -66,15 +73,73 @@ h1 {
 #loginName
 {
 	font-size: 30px;
+    width: 60%;
+    margin: 10px auto;
+    display: block;
+
 }
+
 #loginPassword
 {
 	font-size: 30px;
+    width: 60%;
+    margin: 10px auto;
+    display: block;
+
 }
+
+#firstname
+{
+	font-size: 30px;
+    width: 60%;
+    margin: 10px auto;
+    display: block;
+
+}
+
+#lastname
+{
+	font-size: 30px;
+    width: 60%;
+    margin: 10px auto;
+    display: block;
+
+}
+
+#username
+{
+	font-size: 30px;
+    width: 60%;
+    margin: 10px auto;
+    display: block;
+
+}
+
+#password
+{
+	font-size: 30px;
+    width: 60%;
+    margin: 10px auto;
+    display: block;
+
+}
+
+#label
+{
+    font-size: 2em;
+    width: 60%;
+    margin: 10px auto;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #FFFFFF;
+    display: block;
+}
+
 #searchText
 {
 	font-size: 30px;
 }
+
 #colorText
 {
 	font-size: 30px;
