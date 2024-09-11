@@ -13,11 +13,11 @@
     }
     else{
         $stmt = $conn->prepare("INSERT into Contacts (Name,Phone,Email,UserID) VALUES(?,?,?,?)");
-        $stmt->bind_param("ssss", $name, $phone, $email, $userID);
+        $stmt->bind_param("ssss", $name, $phone, $email, $userId);
         $stmt->execute();
         $stmt->close();
         $conn->close();
-        returnWithError("");
+        returnWithSuccess();
     }
 
     function getRequestInfo()
@@ -25,7 +25,7 @@
         return json_decode(file_get_contents('php://input'), true);
     }
 
-    function sendResultInfoJson( $obj )
+    function sendResultInfoAsJson( $obj )
     {
         header('Content-type: application/json');
         echo $obj;
@@ -33,7 +33,13 @@
 
     function returnWithError( $err )
     {
-        $retVatlue = '{"error":"' . $err . '"}';
+        $retValue = '{"result":"error","error":"' . $err . '"}';
+        sendResultInfoAsJson( $retValue );
+    }
+		
+		function returnWithSuccess()
+    {
+        $retValue = '{"result":"success"}';
         sendResultInfoAsJson( $retValue );
     }
 
