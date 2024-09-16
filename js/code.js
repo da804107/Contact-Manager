@@ -18,7 +18,7 @@ function doLogin()
 	let password = document.getElementById("loginPassword").value;
 //	var hash = md5( password );
 	
-	document.getElementById("loginResult").innerHTML = "";
+	//document.getElementById("loginResult").innerHTML = "";
 
 	let tmp = {login:login,password:password};
 //	var tmp = {login:login,password:hash};
@@ -40,7 +40,7 @@ function doLogin()
 		
 				if( userId < 1 )
 				{		
-					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+					//document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
 					return;
 				}
 		
@@ -56,7 +56,7 @@ function doLogin()
 	}
 	catch(err)
 	{
-		document.getElementById("loginResult").innerHTML = err.message;
+		//document.getElementById("loginResult").innerHTML = err.message;
 	}
 
 }
@@ -113,13 +113,15 @@ function doLogout()
 
 function addContact()
 {
-	let newColor = document.getElementById("colorText").value;
-	document.getElementById("colorAddResult").innerHTML = "";
+	let name = document.getElementById("firstname").value + " " + document.getElementById("lastname").value;
+	let phone = document.getElementById("phone").value;
+	let email = document.getElementById("email").value;
+	
 
-	let tmp = {color:newColor,userId,userId};
+	let tmp = {name:name,phone:phone,email:email,userId:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
-	let url = urlBase + '/AddContacts.' + extension;
+	let url = urlBase +testBranch + api + '/AddContacts.' + extension;
 	
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -130,14 +132,14 @@ function addContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("colorAddResult").innerHTML = "Color has been added";
+				//document.getElementById("colorAddResult").innerHTML = "Color has been added";
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("colorAddResult").innerHTML = err.message;
+		//document.getElementById("colorAddResult").innerHTML = err.message;
 	}
 	
 }
@@ -186,4 +188,9 @@ function searchContact()
 		document.getElementById("colorSearchResult").innerHTML = err.message;
 	}
 	
+}
+
+
+function goDashboard(){
+	window.location.href = "Landingpage.html";
 }
