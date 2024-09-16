@@ -6,6 +6,8 @@
     $email = $inData["email"];
     $userId = $inData["userId"];
 
+    $phone = formatPhoneNumber($phone);
+
     $conn = new mysqli("localhost", "daisy", "SPOoks0219!!", "SMALLPROJ");
     if($conn->connect_error)
     {
@@ -18,6 +20,18 @@
         $stmt->close();
         $conn->close();
         returnWithSuccess();
+    }
+
+    function formatPhoneNumber($phone)
+    {
+        if (preg_match("/^\d{3}-\d{3}-\d{4}$/", $phone)) {
+            // if the phone # is already in the format XXX-XXX-XXXX, return the phone #
+            return $phone;
+        }
+        else{
+            // format the phone number as XXX-XXX-XXXX
+            return sustr($phone, 0, 3) . '-' . substr($phone, 3, 3) . '-' . substr($phone, 6, 4);
+        }
     }
 
     function getRequestInfo()
