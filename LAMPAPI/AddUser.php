@@ -29,8 +29,17 @@
 				$stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
 				$stmt->execute();
 				$stmt->close();
+
+				$stmt = $conn->prepare("select ID from Users where Login=?");
+				$stmt->bind_param("s", $login);
+				$stmt->execute();
+				$result = $stmt->get_result();
+				$stmt->close();
+				$row = $result->fetch_assoc();
+				
 				$conn->close();
-				returnWithSuccess();
+				
+				returnWithInfo( $row['ID'] );
 			}
     }
 
@@ -56,5 +65,10 @@
         $retValue = '{"result":"success"}';
         sendResultInfoAsJson( $retValue );
     }
+function returnWithInfo( $id )
+	{
+		$retValue = '{"id":' . $id . ',"error":""}';
+		sendResultInfoAsJson( $retValue );
+	}
 
     ?>
