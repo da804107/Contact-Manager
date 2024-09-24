@@ -13,27 +13,29 @@
 
     <div class = "center">
         
-<span class = "textbox">
+        <div class = "textbox">
 
-    <h1 id = "title">CONTACT MANAGER</h1>
+                <h1 id = "title">Login</h1>
+                <br>
 
-    <!--<span>LOG IN<br></span>-->
-    <!--span id="label">Username:</span>-->
-    <input type = "text" id="loginName" placeholder="username" /><br />
-    <!--span id="label">Password:</span>-->
-    <input type = "password" id="loginPassword" placeholder="password" /><br />
 
-    <button type = "button" id = "button" class = "buttons" onclick = "doLogin();">LOG IN</button> <br>
+                <!--<span>LOG IN<br></span>-->
+                <!--span id="label">Username:</span>-->
+                <input type = "text" id="loginName" placeholder="Username" /><br />
+                <!--span id="label">Password:</span>-->
+                <input type = "password" id="loginPassword" placeholder="Password" /><br />
 
-    <!--span id = "label"><hr class = "horizontal-line" size = "2">OR</span>-->
+                <button type = "button" id = "loginButton" class = "buttons" onclick = "doLogin();">Login</button>
 
-    <button type = "button" id = "button" class = "buttons" onclick = "window.location.href='signup.html';">CREATE ACCOUNT</button> 
+                <span id = "label">OR</span>
+
+                <button type = "button" id = "signupButton" class = "buttons" onclick = "window.location.href='signup.html';">Create Account</button> 
     
     <br>
     
+        </div>
     </div>
-    
-</span>
 
+<div id="toast" class="toast">Incorrect Username or Password.</div>
 </body>
 </html>
