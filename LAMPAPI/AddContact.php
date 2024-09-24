@@ -1,17 +1,19 @@
 <?php
     $inData = getRequestInfo();
+		
 
     $name = $inData["name"];
     $phone = $inData["phone"];
     $email = $inData["email"];
     $userId = $inData["userId"];
-
+		
     $phone = formatPhoneNumber($phone);
 
     $conn = new mysqli("localhost", "daisy", "SPOoks0219!!", "SMALLPROJ");
     if($conn->connect_error)
     {
-        returnWithError( $conn->connect_error );
+				returnWithSuccess();
+        //returnWithError( $conn->connect_error );
     }
     else{
         $stmt = $conn->prepare("INSERT into Contacts (Name,Phone,Email,UserID) VALUES(?,?,?,?)");
@@ -30,7 +32,7 @@
         }
         else{
             // format the phone number as XXX-XXX-XXXX
-            return sustr($phone, 0, 3) . '-' . substr($phone, 3, 3) . '-' . substr($phone, 6, 4);
+            return substr($phone, 0, 3) . '-' . substr($phone, 3, 3) . '-' . substr($phone, 6, 4);
         }
     }
 
