@@ -16,12 +16,3 @@ Contact Manager is a web application designed to help users manager their contac
 
 ## Usage
 To connect the web application, simply search  http://nteaman_instance1.natalieteaman.site on your web browser.
-
-## Meet The Team
-This project was contributed by:
-- Project Manager: Natalie Teaman
-- Database Administrator: Daisy Hernandez Gonzalez
-- API Developer: Nathan Hicks
-- API Developer: Thomas 
-- Frontend Developer: Oneil 
-- Frontend Developer: Aaron
