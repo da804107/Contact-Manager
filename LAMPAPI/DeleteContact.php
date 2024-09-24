@@ -7,11 +7,14 @@
 		
     $inData = getRequestInfo();
 
-    $id = $inData["ID"];
-    $userID = $inData["UserID"];
-    $hash = $inData["Hash"];
+    $id = $inData["id"];
+
+    $userID = $inData["userId"];
+
+
+    //$hash = $inData["Hash"];
 		
-		$validity = validateUser($userID, $hash);
+	//$validity = validateUser($userID, $hash);
 
     $conn = new mysqli("localhost", "daisy", "SPOoks0219!!", "SMALLPROJ");
     if($conn->connect_error)
