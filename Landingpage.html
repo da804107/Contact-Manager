@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <title>CONTACT MANAGER</title>
     <script type="text/javascript" src="js/md5.js"></script>
     <script type="text/javascript" src="js/code.js"></script>
     <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-</head>
+  </head>
 
-<body>
-    <h1>WELCOME BACK</h1>
+  <body onload="readCookie(); searchTable()">
 
+    <div class = "textbox" id = "landing">
+    <h1 id = "landing">Welcome Back</h1>
 
-    <div id="searchDiv">
+    <div class="horizontal-center">
+          <button type="button" id="logoutButton" class="logout-button" onclick="logout()">Logout</button>
+      
       <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for names..">
-      <button button type = "button" id = "button" class = "buttons" onclick="searchTable()">Search</button>
+
+      <button type="button" id="addContactButton" class="buttons" onclick = "window.location.href='AddContact.html';">Add Contact</button>
+      <br />
+
+      <span id="label">Your Contacts:</span>
+
+      <table id="myTable" class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Daisy Hernandez</td>
+            <td>407-777-1033</td>
+            <td>dHernandez@gmail.com</td>
+            <td>
+              <button class="edit-button" onclick="updateContact(this)">Edit</button>
+              <button class="delete-button" onclick="deleteContact(this)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
     </div>
 
-</body>
-<head>
-
-
-<div class="horizontal-center>
-<span id="label">Your Contacts:</span>
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">name</th>
-        <th scope="col">phone number</th>
-        <th scope="col">email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark Otto</td>
-        <td>(123)-456-7890</td>
-        <td>mOtto@gmail.com</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Larry Thebird</td>
-        <td>(098)-765-4321</td>
-        <td>lThebird@gmail.com</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  </body>
 
 </html>
