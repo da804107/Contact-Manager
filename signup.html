@@ -10,24 +10,22 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 </head>
 
-
+<div class = "center">
 <body>
-    <div class="center">
-    <h1 id>CREATE ACCOUNT</h1>
-    <span id="label">First Name:</span>
+    <div class = "textbox">
+    
+    <h1 id = "sign">Create Account</h1>
     <input type = "text" id = "firstname" placeholder = "First Name" /><br />
-    <span id="label">Last Name:</span>
     <input type = "text" id = "lastname" placeholder = "Last Name" /><br />
-    <span id="label">Username:</span>
     <input type = "text" id = "username" placeholder = "Username" /><br />
-
-    <span id="label">Password:</span>
     <input type = "password" id = "password" placeholder = "Password" /><br />
 
-    <br />
-
-    <button type = "button" id = "button" class = "buttons" onclick = "doSignup()">SIGNUP</button>
+    <button type = "button" id = "loginButton" class = "buttons" onclick = "doSignup()">Sign Up</button>
+    <span id = "label">OR</span>
+    <button type = "button" id = "returnButton" class = "buttons"onclick="logout()">Return to Sign in</button>
+      
     </div>
-
+</div>
+<div id="toast" class="toast">Username already exists! Please create a different one.</div>
 </body>
 </html>
